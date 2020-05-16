@@ -1,0 +1,47 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "it-IT": {
+          "summary": "Podcast Basilica San Michele",
+          "examplePhrases": [
+            "Alexa, avvia san michele",
+            "Alexa, chiedi a san michele di riprodurre l'ultimo podcast"
+          ],
+          "keywords": [
+            "podcast",
+            "streaming"
+          ],
+          "name": "AC San Michele",
+          "description": "Ascolta tutti i podcast dalla basilica di San Michele Arcangelo",
+          "smallIconUri": "https://quisutdeusapp.altervista.org/sanmichele_108.png",
+          "largeIconUri": "https://quisutdeusapp.altervista.org/sanmichele_512.png"
+        }
+      },
+      "isAvailableWorldwide": true,
+      "category": "STREAMING_SERVICE",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "sourceDir": "lambda/py"
+        },
+        "interfaces": [
+          {
+            "type": "AUDIO_PLAYER"
+          }
+        ]
+      }
+    },
+    "manifestVersion": "1.0",
+    "permissions": [],
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "isExportCompliant": true,
+      "containsAds": false,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
+    }
+  }
+}
