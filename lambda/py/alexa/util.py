@@ -3,7 +3,7 @@
 import random
 from typing import List, Dict
 from ask_sdk_model import IntentRequest, Response
-from ask_sdk_model.ui import SimpleCard
+from ask_sdk_model.ui import StandardCard, Image
 from ask_sdk_model.interfaces.audioplayer import (
     PlayDirective, PlayBehavior, AudioItem, Stream, StopDirective)
 from ask_sdk_core.handler_input import HandlerInput
@@ -91,11 +91,16 @@ class Controller:
                 data.PLAYBACK_PLAY.format(podcast.get("title")))
 
             if can_throw_card(handler_input):
-                response_builder.set_card(SimpleCard(
+                response_builder.set_card(StandardCard(
                     title=data.PLAYBACK_PLAY_CARD.format(
                         podcast.get("title")),
-                    content=data.PLAYBACK_PLAY_CARD.format(
-                        podcast.get("title"))))
+                    text=data.PLAYBACK_PLAY_CARD.format(
+                        podcast.get("title")),
+                    image=Image(
+                        small_image_url="https://quisutdeusapp.altervista.org/sanmichele_108.png",
+                        large_image_url="https://quisutdeusapp.altervista.org/sanmichele_512.png"
+                    )
+                ))
 
         return response_builder.response
 

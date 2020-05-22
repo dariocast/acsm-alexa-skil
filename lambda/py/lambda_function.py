@@ -286,8 +286,11 @@ class NoHandler(AbstractRequestHandler):
         playback_info["offset_in_ms"] = 0
         playback_info["playback_index_changed"] = True
         playback_info["has_previous_playback_session"] = False
-
-        return util.Controller.play(handler_input)
+        message = data.WELCOME_MSG
+        reprompt = data.WELCOME_REPROMPT_MSG
+        return handler_input.response_builder.speak(message).ask(
+            reprompt).response
+        # return util.Controller.stop(handler_input)
 
 
 class CancelOrStopIntentHandler(AbstractRequestHandler):
